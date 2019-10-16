@@ -1,6 +1,6 @@
 <?php 
 
-namespace Andr3m0ur4\DB;
+namespace AndreMoura\DB;
 
 class Sql {
 

@@ -8,7 +8,7 @@ $app->config('debug', true);
 
 $app->get('/', function() {
     
-	$sql = new Andr3m0ur4\DB\Sql ( );
+	$sql = new AndreMoura\DB\Sql ( );
 
 	$results = $sql -> select ( "SELECT * FROM tb_users" );
 

@@ -13,7 +13,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Andr3m0ur4\\": "vendor\\hcodebr\\php-classes\\src"
+            "AndreMoura\\": "vendor\\hcodebr\\php-classes\\src"
         }
     }
 }
