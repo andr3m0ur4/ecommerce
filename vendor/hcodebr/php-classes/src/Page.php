@@ -53,5 +53,6 @@ class Page {
 	public function __destruct ( ) {
 
 		$this -> tpl -> draw ( 'footer' );
+		
 	}
 }
