@@ -6,10 +6,11 @@ use \AndreMoura\DB\Sql;
 use \AndreMoura\Model;
 use \AndreMoura\Mailer;
 
-class Category extends Model {
+class Category extends Model 
+{
 	
-	
-	public static function listAll ( ) {
+	public static function listAll ( ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -17,7 +18,8 @@ class Category extends Model {
 
 	}
 
-	public function save ( ) {
+	public function save ( ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -32,7 +34,8 @@ class Category extends Model {
 
 	}
 
-	public function get ( $idcategory ) {
+	public function get ( $idcategory ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -44,7 +47,8 @@ class Category extends Model {
 
 	}
 
-	public function delete ( ) {
+	public function delete ( ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -56,7 +60,8 @@ class Category extends Model {
 		
 	}
 
-	public static function updateFile ( ) {
+	public static function updateFile ( ) 
+	{
 
 		$categories = Category::listAll ( );
 

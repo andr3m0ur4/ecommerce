@@ -2,11 +2,13 @@
 
 namespace AndreMoura;
 
-class Model {
+class Model 
+{
 
 	private $values = [];
 
-	public function __call ( $name, $args ) {
+	public function __call ( $name, $args ) 
+	{
 
 		$method = substr ( $name, 0, 3 );
 		$fieldName = substr ( $name, 3, strlen ( $name ) );
@@ -22,7 +24,8 @@ class Model {
 		}
 	}
 
-	public function setData ( $data = array ( ) ) {
+	public function setData ( $data = array ( ) ) 
+	{
 
 		foreach ( $data as $key => $value ) {
 			
@@ -31,7 +34,8 @@ class Model {
 		}
 	}
 
-	public function getValues ( ) {
+	public function getValues ( ) 
+	{
 
 		return $this -> values;
 		

@@ -4,7 +4,8 @@ namespace AndreMoura;
 
 use Rain\Tpl;
 
-class Mailer {
+class Mailer 
+{
 
 	const USERNAME = 'mouraandre2500@gmail.com';
 	const PASSWORD = '$andr3_m0ur4';
@@ -12,7 +13,8 @@ class Mailer {
 
 	private $email;
 
-	public function __construct ( $toAddress, $toName, $subject, $tplName, $data = array ( ) ) {
+	public function __construct ( $toAddress, $toName, $subject, $tplName, $data = array ( ) ) 
+	{
 
 		$config = array(
 			"tpl_dir"       => $_SERVER['DOCUMENT_ROOT'] . '/views/email/',
@@ -61,7 +63,8 @@ class Mailer {
 		
 	}
 
-	public function send ( ) {
+	public function send ( ) 
+	{
 
 		return $this -> email -> send ( );
 

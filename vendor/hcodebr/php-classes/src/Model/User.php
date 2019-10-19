@@ -6,13 +6,15 @@ use \AndreMoura\DB\Sql;
 use \AndreMoura\Model;
 use \AndreMoura\Mailer;
 
-class User extends Model {
+class User extends Model 
+{
 
 	const SESSION = 'User';
 	const SECRET = 'andrecommerce123';
 	const SECRET_IV = 'andrecommerce123';
 
-	public static function login ( $login, $password ) {
+	public static function login ( $login, $password ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -41,7 +43,8 @@ class User extends Model {
 		}
 	}
 
-	public static function verifyLogin ( $inadmin = true ) {
+	public static function verifyLogin ( $inadmin = true ) 
+	{
 
 		if ( 
 			!isset ( $_SESSION[User::SESSION] ) || 
@@ -56,13 +59,15 @@ class User extends Model {
 		}
 	}
 
-	public static function logout ( ) {
+	public static function logout ( ) 
+	{
 
 		$_SESSION[User::SESSION] = null;
 
 	}
 
-	public static function listAll ( ) {
+	public static function listAll ( ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -71,7 +76,8 @@ class User extends Model {
 		" );
 	}
 
-	public function save ( ) {
+	public function save ( ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -90,7 +96,8 @@ class User extends Model {
 
 	}
 
-	public function get ( $iduser ) {
+	public function get ( $iduser ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -104,7 +111,8 @@ class User extends Model {
 		$this -> setData ( $results[0] );
 	}
 
-	public function update ( ) {
+	public function update ( ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -123,7 +131,8 @@ class User extends Model {
 		$this -> setData ( $results[0] );
 	}
 
-	public function delete ( ) {
+	public function delete ( ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -132,7 +141,8 @@ class User extends Model {
 		));
 	}
 
-	public static function getForgot ( $email ) {
+	public static function getForgot ( $email ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -190,7 +200,8 @@ class User extends Model {
 		}
 	}
 
-	public static function validForgotDecrypt ( $code ) {
+	public static function validForgotDecrypt ( $code ) 
+	{
 
 		$cipher = "AES-128-CBC";
 
@@ -224,7 +235,8 @@ class User extends Model {
 		}
 	}
 
-	public static function setForgotUsed ( $idrecovery ) {
+	public static function setForgotUsed ( $idrecovery ) 
+	{
 
 		$sql = new Sql ( );
 
@@ -235,7 +247,8 @@ class User extends Model {
 
 	}
 
-	public function setPassword ( $password ) {
+	public function setPassword ( $password ) 
+	{
 
 		$sql = new Sql ( );
 
