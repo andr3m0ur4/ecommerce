@@ -1,6 +1,7 @@
 <?php 
 
 use \AndreMoura\Page;
+use \AndreMoura\Model\Category;
 use \AndreMoura\Model\Product;
 
 $app->get('/', function() {
@@ -25,7 +26,7 @@ $app -> get ( '/categories/:idcategory', function ( $idcategory ) {
 
 	$page -> setTpl ( 'category', [
 		'category' => $category -> getValues ( ),
-		'products' => []
+		'products' => Product::checkList ( $category -> getProducts ( ) )
 	] );
 	
 });
