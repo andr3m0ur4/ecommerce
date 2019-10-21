@@ -3,6 +3,7 @@
 use \AndreMoura\Page;
 use \AndreMoura\Model\Category;
 use \AndreMoura\Model\Product;
+use \AndreMoura\Model\Cart;
 
 $app->get('/', function() {
 
@@ -57,5 +58,15 @@ $app->get('/categories/products/:desurl', function( $desurl ) {
 		'product' => $product -> getValues (  ),
 		'categories' => $product -> getCategories ( )
 	] );
+
+});
+
+$app->get('/cart', function( ) {
+
+	$cart = Cart::getFromSession ( );
+    
+	$page = new Page ( );
+
+	$page -> setTpl ( 'cart' );
 
 });
