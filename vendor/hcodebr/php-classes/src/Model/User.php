@@ -14,6 +14,7 @@ class User extends Model
 	const SECRET_IV = 'andrecommerce123';
 	const ERROR = 'UserError';
 	const ERROR_REGISTER = 'UserErrorRegister';
+	const SUCCESS = 'UserSuccess';
 
 	public static function getFromSession ( )
 	{
@@ -137,7 +138,7 @@ class User extends Model
 			"CALL sp_user_save (:desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)", 
 			array (
 				':desperson' => $this -> getdesperson( ),
-				':deslogin' => utf8_decode ( $this -> getdeslogin( ) ),
+				':deslogin' => $this -> getdeslogin( ),
 				':despassword' => User::getPasswordHash ( $this -> getdespassword ( ) ),
 				':desemail' => $this -> getdesemail ( ),
 				':nrphone' => $this -> getnrphone ( ),
@@ -395,6 +396,32 @@ class User extends Model
 		return password_hash($password, PASSWORD_DEFAULT, [
 			'cost' => 12
 		]);
+
+	}
+
+	public function setSuccess ( $msg )
+	{
+
+		$_SESSION[User::SUCCESS] = $msg;
+
+	}
+
+	public static function getSuccess ( )
+	{
+
+		$msg = ( isset ( $_SESSION[User::SUCCESS] ) AND $_SESSION[User::SUCCESS] ) 
+			? $_SESSION[User::SUCCESS] : '';
+
+		User::clearSuccess ( );
+
+		return $msg;
+
+	}
+
+	public static function clearSuccess ( )
+	{
+
+		$_SESSION[User::SUCCESS] = null;
 
 	}
 }
