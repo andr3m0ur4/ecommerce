@@ -137,7 +137,7 @@ class User extends Model
 		$results = $sql -> select ( 
 			"CALL sp_user_save (:desperson, :deslogin, :despassword, :desemail, :nrphone, :inadmin)", 
 			array (
-				':desperson' => $this -> getdesperson( ),
+				':desperson' => utf8_decode ( $this -> getdesperson( ) ),
 				':deslogin' => $this -> getdeslogin( ),
 				':despassword' => User::getPasswordHash ( $this -> getdespassword ( ) ),
 				':desemail' => $this -> getdesemail ( ),
@@ -180,7 +180,7 @@ class User extends Model
 					':iduser' => $this -> getiduser ( ),
 					':desperson' => utf8_decode ( $this -> getdesperson( ) ),
 					':deslogin' => $this -> getdeslogin( ),
-					':despassword' => User::getPasswordHash ( $this -> getdespassword ( ) ),
+					':despassword' => $this -> getdespassword ( ),
 					':desemail' => $this -> getdesemail ( ),
 					':nrphone' => $this -> getnrphone ( ),
 					':inadmin' => $this -> getinadmin ( )
