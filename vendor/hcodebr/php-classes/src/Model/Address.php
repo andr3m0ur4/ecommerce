@@ -13,7 +13,7 @@ class Address extends Model
 	public static function getCEP ( $nrcep )
 	{
 
-		$nrcep = str_replace ( '-', 'replace', $nrcep );
+		$nrcep = str_replace ( '-', '', $nrcep );
 
 		$ch = curl_init ( );
 
@@ -74,31 +74,7 @@ class Address extends Model
 		}
 
 	}
-
-	public function get ( int $idcart ) 
-	{
-
-		$sql = new Sql ( );
-
-		$results = $sql -> select ( "SELECT * FROM tb_carts WHERE idcart = :idcart", [
-				'idcart' => $idcart
-		] );
-
-		if ( count ( $results ) > 0 ) {
-			$this -> setData ( $results[0] );
-		}
-
-	}
 	
-	public function getValues ( )
-	{
-
-		$this -> getCalculateTotal ( );
-
-		return parent::getValues ( );
-
-	}
-
 	public static function setMsgError ( $msg )
 	{
 

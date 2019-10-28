@@ -19,7 +19,7 @@ class Cart extends Model
 
 		$cart = new Cart ( );
 
-		if ( isset ( $_SESSION[Cart::SESSION] ) AND $_SESSION[Cart::SESSION]['idcart'] > 0 ) {
+		if ( isset ( $_SESSION[Cart::SESSION] ) AND ( int ) $_SESSION[Cart::SESSION]['idcart'] > 0 ) {
 
 			$cart -> get ( ( int ) $_SESSION[Cart::SESSION]['idcart'] );
 
