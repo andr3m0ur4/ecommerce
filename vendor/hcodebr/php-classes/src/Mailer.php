@@ -8,7 +8,7 @@ class Mailer
 {
 
 	const USERNAME = 'mouraandre2500@gmail.com';
-	const PASSWORD = '$andr3_m0ur4';
+	const PASSWORD = '*************';
 	const NAME_FROM = 'André Ecommerce';
 
 	private $email;
